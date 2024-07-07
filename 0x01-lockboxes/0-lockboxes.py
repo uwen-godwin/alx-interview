@@ -19,6 +19,7 @@ def canUnlockAll(boxes):
     opened_boxes[0] = True
     keys = [0]
 
+
     while keys:
         current_key = keys.pop()
         for key in boxes[current_key]:
