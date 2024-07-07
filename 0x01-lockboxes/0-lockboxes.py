@@ -2,6 +2,7 @@
 """
 Module that determines if all boxes can be unlocked
 """
+
 def canUnlockAll(boxes):
     """
     Determines if all the boxes can be opened.
@@ -10,6 +11,7 @@ def canUnlockAll(boxes):
     Returns:
     True if all boxes can be opened, else False
     """
+    
     n = len(boxes)
     opened_boxes = [False] * n
     opened_boxes[0] = True
