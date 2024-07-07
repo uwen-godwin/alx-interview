@@ -14,6 +14,7 @@ def canUnlockAll(boxes):
     Returns:
     True if all boxes can be opened, else False
     """
+    
     n = len(boxes)
     opened_boxes = [False] * n
     opened_boxes[0] = True
