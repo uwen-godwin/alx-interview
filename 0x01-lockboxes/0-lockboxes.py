@@ -7,14 +7,13 @@ Module that determines if all boxes can be unlocked
 def canUnlockAll(boxes):
     """
     Determines if all the boxes can be opened.
-    
+
     Arguments:
     boxes -- list of lists, where each list represents keys in a box
-    
+
     Returns:
     True if all boxes can be opened, else False
     """
-    
     n = len(boxes)
     opened_boxes = [False] * n
     opened_boxes[0] = True
