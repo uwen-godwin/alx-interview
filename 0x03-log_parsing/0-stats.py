@@ -15,6 +15,7 @@ status_codes = {
     '500': 0
 }
 
+
 def print_stats():
     """ Print the metrics """
     print(f"File size: {total_size}")
@@ -22,10 +23,12 @@ def print_stats():
         if status_codes[code] > 0:
             print(f"{code}: {status_codes[code]}")
 
+
 def signal_handler(sig, frame):
     """ Handle CTRL+C """
     print_stats()
     sys.exit(0)
+
 
 # Setup signal handler for CTRL+C
 signal.signal(signal.SIGINT, signal_handler)
@@ -40,12 +43,12 @@ for line in sys.stdin:
         ip = parts[0]
         status_code = parts[-2]
         file_size = int(parts[-1])
-        
+
         total_size += file_size
-        
+
         if status_code in status_codes:
             status_codes[status_code] += 1
-        
+
         line_count += 1
         if line_count == 10:
             print_stats()
