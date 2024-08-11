@@ -12,7 +12,7 @@ const url = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
 
 request(url, function (error, response, body) {
   if (error) {
-    console.log(error);
+    console.error(error);
     return;
   }
   
@@ -20,11 +20,10 @@ request(url, function (error, response, body) {
   const characters = data.characters;
   
   if (!characters) {
-    console.log('No characters found for this movie.');
+    console.error('No characters found for this movie.');
     return;
   }
 
-  // Create an array to store the promises for each character request
   const characterPromises = characters.map(url => {
     return new Promise((resolve, reject) => {
       request(url, (err, res, body) => {
@@ -37,10 +36,9 @@ request(url, function (error, response, body) {
     });
   });
 
-  // Wait for all promises to resolve and then print the characters in order
   Promise.all(characterPromises)
     .then(names => {
       names.forEach(name => console.log(name));
     })
-    .catch(err => console.log(err));
+    .catch(err => console.error(err));
 });
