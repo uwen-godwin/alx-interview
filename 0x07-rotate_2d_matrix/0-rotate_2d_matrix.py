@@ -10,7 +10,7 @@ def rotate_2d_matrix(matrix):
         None: The matrix is modified in place.
     """
     n = len(matrix)
-
+    
     # Step 1: Transpose the matrix
     for i in range(n):
         for j in range(i + 1, n):
