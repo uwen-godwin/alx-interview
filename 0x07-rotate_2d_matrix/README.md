@@ -22,3 +22,13 @@ def rotate_2d_matrix(matrix):
     Returns:
         None: The matrix is modified in place.
     """
+
+## Usage
+
+To test the rotation function, run the `main_0.py` script:
+
+```bash
+$ ./main_0.py
+[[7, 4, 1],
+ [8, 5, 2],
+ [9, 6, 3]]
